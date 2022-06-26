@@ -49,10 +49,6 @@ resource "yandex_compute_instance" "vm-master" {
     nat       = true
   }
 
-  metadata = {
-    ssh-keys = "d11-user:${file("~/.ssh/id_rsa.pub")}"
-  }
-
   lifecycle {
     create_before_destroy = true
   }
